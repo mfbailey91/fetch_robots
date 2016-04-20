@@ -8,7 +8,7 @@
 
 
   <!-- URDF -->
-  <param name="robot_description" textfile="$(find fetch_sandbox)/fetch_gazebo_1961/robots/stand_alone_arm.urdf" />
+  <param name="robot_description" textfile="$/home/fetch/indigo/src/sandbox/fetch_gazebo_1961//robots/stand_alone_arm.urdf" />
 
   <!-- Drivers for Base -->
   <node name="robot_driver" launch-prefix="$(arg launch_prefix)" pkg="fetch_drivers" type="robot_driver" output="screen">
@@ -19,10 +19,6 @@
     <param name="has_arm" value="true" />
   </node>
 
-  <!-- Drivers for Gripper -->
-  <node name="gripper_driver" pkg="fetch_drivers" type="gripper_driver" output="screen" >
-    <param name="firmware_tar_gz" value="$(find fetch_drivers)/firmware.tar.gz" />
-  </node>
 
   <!-- Controllers -->
   <rosparam file="$(find arm_bringup)/config/default_controllers.yaml" command="load" />
